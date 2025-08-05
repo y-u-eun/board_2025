@@ -16,7 +16,7 @@ public interface SampleRepository extends JpaRepository<Sample, Long>, JpaSpecif
 //    Page<Sample> findAllByTitle(String type, Pageable pageable);
 //    List<Sample> findAllByTitle(String type);
 
-    // List<Sample> findByTitle(String title);
+//     List<Sample> findByTitle(String title);
     List<Sample> findByTitleLike(String title);
 
     // Spring Data JPA - JPA Query Methods
