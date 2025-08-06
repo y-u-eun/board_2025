@@ -27,26 +27,46 @@ public class SampleRepositoryTest {
 //        assertEquals(2, list.size());
 //    }
 
+//    @Test
+//    void findAllByTitle() {
+//        Map<String, Object> filter = new HashMap<>();
+//        filter.put("title", "t1");
+//
+//        PageRequest pageable = PageRequest.of(0, 10);
+//        Page<Sample> page = sampleRepository.findAll(SampleSpecs.search(filter), pageable);
+//
+//        for (Sample s : page) {
+//            System.out.println(s.getTitle());
+//        }
+//    }
+//
+//    @Test
+//    void findByTitleLike() {
+//        List<Sample> list = sampleRepository.findByTitleLike("t2");
+//
+//        for (Sample s : list) {
+//            System.out.println(s.getId());
+//        }
+//    }
+//
+//    @Test
+//    void findAllByTitleLike() {
+//        List<Sample> list = sampleRepository.findAllByTitleLike("2");
+//
+//        for (Sample s : list) {
+//            System.out.println(s.getId());
+//        }
+//    }
+
     @Test
-    void findAllByTitle() {
-        Map<String, Object> filter = new HashMap<>();
-        filter.put("title", "t1");
-
-        PageRequest pageable = PageRequest.of(0, 10);
-        Page<Sample> page = sampleRepository.findAll(SampleSpecs.search(filter), pageable);
-
-        for (Sample s : page) {
-            System.out.println(s.getTitle());
-        }
+    void findAllByDynamicConditions() {
+        List<Sample> list2 = sampleRepository.findAllByDynamicConditions("t2");
+        assertEquals(5, list2.size());
     }
 
     @Test
-    void findByTitleLike() {
-        List<Sample> list = sampleRepository.findByTitleLike("t2");
-
-        for (Sample s : list) {
-            System.out.println(s.getId());
-        }
+    void countByTitleContaining() {
+        Long resultant = sampleRepository.countByTitleContaining("t2");
+        assertEquals(5, resultant);
     }
-
 }
