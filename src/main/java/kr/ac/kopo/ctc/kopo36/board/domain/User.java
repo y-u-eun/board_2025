@@ -10,41 +10,71 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
-
-    private String user_name;
+    private Long id;
+    private String username;
+    private String password;
+    private String name;
     private String phone;
-    private String user_nick;
+    private String nick;
+    private String roles;
 
-    public Long getUser_id() {
-        return user_id;
+    public String getRoles() {
+        return roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getPhone() {
         return phone;
     }
 
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public String getUser_nick() {
-        return user_nick;
-    }
-
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public String getName() {
+        return name;
     }
 
-    public void setUser_nick(String user_nick) {
-        this.user_nick = user_nick;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+   public boolean isEmpty() {
+        return true;
+   }
 }

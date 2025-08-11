@@ -3,6 +3,7 @@ plugins {
 	id 'war'
 	id 'org.springframework.boot' version '3.5.4'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'jacoco'
 }
 
 group = 'kr.ac.kopo.ctc.kopo36'
@@ -50,6 +51,14 @@ dependencies {
 	// JSTL
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
 	runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+
+	// Rest-Assured
+	testImplementation 'io.rest-assured:rest-assured:5.1.1'
+
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-taglibs'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

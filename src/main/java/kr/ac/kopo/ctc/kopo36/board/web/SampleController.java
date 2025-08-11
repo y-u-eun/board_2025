@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/sample")
@@ -106,29 +107,29 @@ public class SampleController {
         return s;
     }
 
-    @RequestMapping(value = "/hello")
-    public String hello(Model model) {
-        //int sum = postRepository.findAll()
-
-        PageRequest pageable = PageRequest.of(0, 10);
-        Page<Post> page = postRepository.findAll(pageable);
-
-        List<String> myItems = new ArrayList<>();
-        myItems.add("aaa");
-        myItems.add("bbb");
-        myItems.add("ccc");
-
-        model.addAttribute("name", "홍길동");
-//        model.addAttribute("sum", sum);
-        model.addAttribute("myItems", myItems);
-
-        model.addAttribute("posts", page.getContent());
-        return "hello";
-    }
+//    @RequestMapping(value = "/hello")
+//    public String hello(Model model) {
+//        //int sum = postRepository.findAll()
+//
+//        PageRequest pageable = PageRequest.of(0, 10);
+//        Page<Post> page = postRepository.findAll(pageable);
+//
+//        List<String> myItems = new ArrayList<>();
+//        myItems.add("aaa");
+//        myItems.add("bbb");
+//        myItems.add("ccc");
+//
+//        model.addAttribute("name", "홍길동");
+////        model.addAttribute("sum", sum);
+//        model.addAttribute("myItems", myItems);
+//
+//        model.addAttribute("posts", page.getContent());
+//        return "hello";
+//    }
 
     @GetMapping("/selectOne")
     @ResponseBody
-    public Sample selectOne(Model model, @RequestParam Long id) {
+    public Optional<Sample> selectOne(Model model, @RequestParam Long id) {
         return sampleService.selectOne(id);
     }
 }

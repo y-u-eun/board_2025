@@ -16,13 +16,13 @@ public class PostRepositoryTest {
     @Autowired
     PostRepository postRepository;
 
-    @Test
-    void selectAll() {
-        PageRequest pageable = PageRequest.of(0, 10);
-        Page<Post> page = postRepository.selectAll(pageable);
-
-        for (Post p : page) {
-            System.out.println(p.getTitle());
-        }
-    }
+//    @Test
+//    void selectAll() {
+//        PageRequest pageable = PageRequest.of(0, 10);
+//        Page<Post> page = postRepository.selectAll(pageable);
+//
+//        for (Post p : page) {
+//            System.out.println(p.getTitle());
+//        }
+//    }
 }

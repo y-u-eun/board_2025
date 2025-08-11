@@ -1,9 +1,11 @@
 package kr.ac.kopo.ctc.kopo36.board.service;
 
 import kr.ac.kopo.ctc.kopo36.board.domain.Sample;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public interface SampleService {
     void testNoTransactional();
     void testTransactional();

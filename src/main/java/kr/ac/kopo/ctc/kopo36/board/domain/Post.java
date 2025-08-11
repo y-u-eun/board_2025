@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long post_id;
+    private Long id;
 
     private String title;
     private String content;
@@ -29,12 +29,12 @@ public class Post {
         return title;
     }
 
-    public Long getPost_id() {
-        return post_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setPost_id(Long post_id) {
-        this.post_id = post_id;
+    public Long getId() {
+        return id;
     }
 
     public Board getBoard() {

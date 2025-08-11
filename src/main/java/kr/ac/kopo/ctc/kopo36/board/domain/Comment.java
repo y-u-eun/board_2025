@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long comment_id;
+    private Long id;
 
     private String comment;
 
@@ -18,35 +18,35 @@ public class Comment {
     @JoinColumn(name = "post_id")
     private Post post;
 
-    public User getUser() {
-        return user;
+    public Long getId() {
+        return id;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Long getComment_id() {
-        return comment_id;
-    }
-
-    public String getComment() {
-        return comment;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setComment(String comment) {
         this.comment = comment;
     }
 
-    public void setComment_id(Long comment_id) {
-        this.comment_id = comment_id;
+    public String getComment() {
+        return comment;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
     }
 
     public Post getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
     }
 }

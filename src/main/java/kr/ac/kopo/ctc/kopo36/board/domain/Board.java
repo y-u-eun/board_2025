@@ -9,23 +9,23 @@ import jakarta.persistence.Id;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long board_id;
+    private Long id;
 
-    private String board_name;
+    private String name;
 
-    public Long getBoard_id() {
-        return board_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setBoard_id(Long board_id) {
-        this.board_id = board_id;
+    public Long getId() {
+        return id;
     }
 
-    public String getBoard_name() {
-        return board_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setBoard_name(String board_name) {
-        this.board_name = board_name;
+    public String getName() {
+        return name;
     }
 }
